@@ -1,28 +1,28 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <BorlandProject>
 	<ActiveMobileDevice>
-		<NoProfile Android64="" Android=""/>
+		<NoProfile Android64="RQCTA09B7NB" Android="RQCTA09B7NB"/>
 	</ActiveMobileDevice>
 	<Transactions>
     <Transaction>2024/02/24 14:18:52.000.445,=C:\DCCoders\DCFitPro\Mobile\Unit1.pas</Transaction>
-    <Transaction>2024/02/24 14:19:39.000.401,C:\DCCoders\DCFitPro\Mobile\UnitCadExercicio.pas=C:\DCCoders\DCFitPro\Mobile\Unit1.pas</Transaction>
-    <Transaction>2024/02/24 14:19:39.000.401,C:\DCCoders\DCFitPro\Mobile\UnitCadExercicio.fmx=C:\DCCoders\DCFitPro\Mobile\Unit1.fmx</Transaction>
+    <Transaction>2024/02/24 14:19:39.000.401,C:\DCCoders\DCFitPro\Mobile\Unit1.pas=C:\DCCoders\DCFitPro\Mobile\UnitCadExercicio.pas</Transaction>
+    <Transaction>2024/02/24 14:19:39.000.401,C:\DCCoders\DCFitPro\Mobile\Unit1.fmx=C:\DCCoders\DCFitPro\Mobile\UnitCadExercicio.fmx</Transaction>
     <Transaction>2024/02/24 15:20:32.000.246,=C:\DCCoders\DCFitPro\Mobile\Frames\Frame.Exercicio.pas</Transaction>
     <Transaction>2024/02/27 22:05:06.000.202,=C:\DCCoders\DCFitPro\Mobile\unEdicao.pas</Transaction>
     <Transaction>2024/02/27 22:06:22.000.698,=C:\DCCoders\DCFitPro\Mobile\Units\uFancyDialog.pas</Transaction>
     <Transaction>2024/03/05 20:46:59.000.568,=C:\DCCoders\DCFitPro\Mobile\Unit1.pas</Transaction>
-    <Transaction>2024/03/05 20:49:54.000.178,C:\DCCoders\DCFitPro\Mobile\Unit1.pas=C:\DCCoders\DCFitPro\Mobile\UnitCadastraTreino.pas</Transaction>
-    <Transaction>2024/03/05 20:49:54.000.178,C:\DCCoders\DCFitPro\Mobile\Unit1.fmx=C:\DCCoders\DCFitPro\Mobile\UnitCadastraTreino.fmx</Transaction>
+    <Transaction>2024/03/05 20:49:54.000.178,C:\DCCoders\DCFitPro\Mobile\UnitCadastraTreino.fmx=C:\DCCoders\DCFitPro\Mobile\Unit1.fmx</Transaction>
+    <Transaction>2024/03/05 20:49:54.000.178,C:\DCCoders\DCFitPro\Mobile\UnitCadastraTreino.pas=C:\DCCoders\DCFitPro\Mobile\Unit1.pas</Transaction>
     <Transaction>2024/03/07 20:08:29.000.481,=C:\DCCoders\DCFitPro\Mobile\Unit1.pas</Transaction>
-    <Transaction>2024/03/07 20:10:25.000.324,C:\DCCoders\DCFitPro\Mobile\UnitCadastraTreinoAluno.fmx=C:\DCCoders\DCFitPro\Mobile\Unit1.fmx</Transaction>
-    <Transaction>2024/03/07 20:10:25.000.324,C:\DCCoders\DCFitPro\Mobile\UnitCadastraTreinoAluno.pas=C:\DCCoders\DCFitPro\Mobile\Unit1.pas</Transaction>
+    <Transaction>2024/03/07 20:10:25.000.324,C:\DCCoders\DCFitPro\Mobile\Unit1.fmx=C:\DCCoders\DCFitPro\Mobile\UnitCadastraTreinoAluno.fmx</Transaction>
+    <Transaction>2024/03/07 20:10:25.000.324,C:\DCCoders\DCFitPro\Mobile\Unit1.pas=C:\DCCoders\DCFitPro\Mobile\UnitCadastraTreinoAluno.pas</Transaction>
     <Transaction>2024/03/07 20:26:02.000.431,=C:\DCCoders\DCFitPro\Mobile\Units\uCombobox.pas</Transaction>
     <Transaction>2024/03/09 14:34:23.000.796,=C:\DCCoders\DCFitPro\Mobile\UnitListaExercicio_IncTreino.pas</Transaction>
     <Transaction>2024/03/09 14:36:54.000.150,C:\DCCoders\DCFitPro\Mobile\UnitListaExercicio_IncTreino.pas=</Transaction>
     <Transaction>2024/03/09 14:36:59.000.536,=C:\DCCoders\DCFitPro\Mobile\UnitListaExercicio_IncTreino.pas</Transaction>
     <Transaction>2024/03/17 11:34:01.000.001,=C:\DCCoders\DCFitPro\Mobile\UnitListaAlunos.pas</Transaction>
     <Transaction>2024/05/11 14:46:33.000.036,=C:\DCCoders\DCFitPro\Mobile\Unit1.pas</Transaction>
-    <Transaction>2024/05/11 14:48:45.000.558,C:\DCCoders\DCFitPro\Mobile\unitCloneTreino.fmx=C:\DCCoders\DCFitPro\Mobile\Unit1.fmx</Transaction>
-    <Transaction>2024/05/11 14:48:45.000.558,C:\DCCoders\DCFitPro\Mobile\unitCloneTreino.pas=C:\DCCoders\DCFitPro\Mobile\Unit1.pas</Transaction>
+    <Transaction>2024/05/11 14:48:45.000.558,C:\DCCoders\DCFitPro\Mobile\Unit1.fmx=C:\DCCoders\DCFitPro\Mobile\unitCloneTreino.fmx</Transaction>
+    <Transaction>2024/05/11 14:48:45.000.558,C:\DCCoders\DCFitPro\Mobile\Unit1.pas=C:\DCCoders\DCFitPro\Mobile\unitCloneTreino.pas</Transaction>
   </Transactions>
 </BorlandProject>
