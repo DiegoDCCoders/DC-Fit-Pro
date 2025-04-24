@@ -81,6 +81,7 @@ type
     procedure ExcluirTreinoOnline(id_treino: Integer);
     procedure UsuarioOnline(busca: string);
     procedure ClonarTreinoOnline(id_usuario_origem, id_usuario_destino, id_professor: Integer);
+    procedure ExcluirTodosTreinosOnline(id_usuario: Integer);
   end;
 
 var
@@ -624,6 +625,34 @@ begin
               ExecSql;
           end;
         end;
+
+    finally
+        json.DisposeOf;
+    end;
+end;
+
+procedure TDmGlobal.ExcluirTodosTreinosOnline(id_usuario: Integer);
+  var
+    resp: IResponse;
+    json: TJSONObject;
+begin
+    tabDeleteTreinoExercicio.FieldDefs.Clear;
+
+    try
+        json := TJSONObject.Create;
+        json.AddPair('id_usuario', id_usuario);
+        //json.AddPair('id_exercicio', id_exercicio);
+
+        resp := TRequest.New.BaseURL(BASE_URL + '/'+ 'treinos/exercicios/excluirtodostreinos/'+ id_usuario.ToString)
+                //.Resource('treinos/exercicios/excluir/'+ id_treino.ToString + '/' + id_exercicio.ToString)
+                .BasicAuthentication('DCCoders', 'TheoBia1420')
+                .Accept('application/json')
+                //.DataSetAdapter(tabDeleteTreinoExercicio)
+                .Delete;
+
+        if resp.StatusCode <> 204 then
+            raise Exception.Create(resp.Content)
+        ;
 
     finally
         json.DisposeOf;

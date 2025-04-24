@@ -79,7 +79,10 @@ end;
 procedure TfrmCloneTreino.ClonarTreino(Sender: TObject);
 begin
   try
+    DmGlobal.ExcluirTodosTreinosOnline(TSession.ID_ALUNO_CLONE);
+
     DmGlobal.ClonarTreinoOnline(TSession.ID_ALUNO, TSession.ID_ALUNO_CLONE, TSession.ID_USUARIO);
+
     if Assigned(ExecuteOnClose) then
      ExecuteOnClose;
 

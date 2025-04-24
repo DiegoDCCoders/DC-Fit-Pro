@@ -13,15 +13,14 @@ type
     lblTitulo: TLabel;
     Rectangle1: TRectangle;
     edtNome: TEdit;
-    edtEmail: TEdit;
     rectBtnLogin: TRectangle;
     btnSalvar: TSpeedButton;
     imgFechar: TImage;
     procedure imgFecharClick(Sender: TObject);
-    procedure FormShow(Sender: TObject);
     procedure btnSalvarClick(Sender: TObject);
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
   private
+    procedure ThreadLoginTerminate(Sender: TObject);
     { Private declarations }
   public
     { Public declarations }
@@ -34,42 +33,42 @@ implementation
 
 {$R *.fmx}
 
-uses DataModule.Global, UnitPrincipal;
+uses DataModule.Global, UnitPrincipal, uLoading;
 
 procedure TFrmPerfilCad.btnSalvarClick(Sender: TObject);
+var
+    t: TThread;
 begin
-    try
-        DmGlobal.EditarUsuarioOnline(TSession.ID_USUARIO, edtNome.Text, edtEmail.Text);
-        DmGlobal.EditarUsuario(edtNome.Text, edtEmail.Text);
+    TLoading.Show(FrmPerfilCad, '');
 
-        TSession.NOME := edtNome.Text;
-        TSession.EMAIL := edtEmail.Text;
+    t := TThread.CreateAnonymousThread(procedure
+    begin
+        DmGlobal.CriarContaOnline(edtNome.text, edtNome.Text, '12345');
 
-        FrmPrincipal.lblNome.text := edtNome.Text;
+    end);
 
-        close;
-    except on ex:exception do
-        showmessage('Erro ao salvar dados do usuário: ' + ex.Message);
-    end;
+    t.OnTerminate := ThreadLoginTerminate;
+    t.Start;
+end;
+
+procedure TFrmPerfilCad.ThreadLoginTerminate(Sender: TObject);
+begin
+    TLoading.Hide;
+
+    if Sender is TThread then
+        if Assigned(TThread(Sender).FatalException) then
+        begin
+            showmessage(Exception(TThread(sender).FatalException).Message);
+            exit;
+        end;
+
+    close;
 end;
 
 procedure TFrmPerfilCad.FormClose(Sender: TObject; var Action: TCloseAction);
 begin
     Action := TCloseAction.cafree;
     FrmPerfilCad := nil;
-end;
-
-procedure TFrmPerfilCad.FormShow(Sender: TObject);
-begin
-    try
-        DmGlobal.ListarUsuario;
-
-        edtNome.Text := DmGlobal.qryUsuario.fieldbyname('nome').asstring;
-        edtEmail.Text := DmGlobal.qryUsuario.fieldbyname('email').asstring;
-
-    except on ex:exception do
-        showmessage('Erro ao carregar dados do usuário: ' + ex.Message);
-    end;
 end;
 
 procedure TFrmPerfilCad.imgFecharClick(Sender: TObject);

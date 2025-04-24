@@ -13,7 +13,7 @@ type
     Layout1: TLayout;
     imgPerfil: TImage;
     lbTreinos: TListBox;
-    imgRefresh: TImage;
+    imgIncluirUsuario: TImage;
     Layout2: TLayout;
     Label1: TLabel;
     lblNome: TLabel;
@@ -33,6 +33,7 @@ type
     procedure FormCreate(Sender: TObject);
     procedure rectPerfilClick(Sender: TObject);
     procedure Rectangle1Click(Sender: TObject);
+    procedure imgIncluirUsuarioClick(Sender: TObject);
   private
     procedure CarregarTreinos;
     procedure AddTreino(id_treino: integer; titulo, subtitulo: string);
@@ -53,7 +54,7 @@ implementation
 {$R *.fmx}
 
 uses Frame.Treino, UnitTreinoDetalhe, UnitPerfil, DataModule.Global,
-  UnitListaExercicio, UnitCadastraTreino;
+  UnitListaExercicio, UnitCadastraTreino, UnitPerfilCad;
 
 procedure TFrmPrincipal.AddTreino(id_treino: integer;
                                   titulo, subtitulo: string);
@@ -173,6 +174,14 @@ begin
   //SincronizarTreinos;
 
 
+end;
+
+procedure TFrmPrincipal.imgIncluirUsuarioClick(Sender: TObject);
+begin
+  if NOT Assigned(FrmPerfilCad) then
+    Application.CreateForm(TFrmPerfilCad, FrmPerfilCad);
+
+    FrmPerfilCad.Show;
 end;
 
 procedure TFrmPrincipal.imgPerfilClick(Sender: TObject);
